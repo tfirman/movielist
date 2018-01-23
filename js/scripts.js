@@ -49,6 +49,7 @@ $(document).ready(function() {
     var mTime = $("input:radio[name=time]:checked").val();
     var newTicket = new Ticket(lName,mType,age,mTime);
     totalCost += newTicket.price;
+    alert (totalCost);
     $(".movieList").show();
     $("ul#movies").append("<li><span class='movieL'>" + newTicket.price + " " + newTicket.time + " " + newTicket.name + "</span></li>");
 
