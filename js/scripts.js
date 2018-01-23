@@ -61,8 +61,8 @@ $(document).ready(function() {
     $(".movieList").show();
     $("ul#movies").append("<li><span class='movieL'>" + "$" + newTicket.price + ": " + newTicket.time + " " + newTicket.name + "</span></li>");
     $("h4#totalCost").text("Total Cost: $" + parseInt(totalCost))
-    $('input[type=checkbox]').each(function() {
-      if (this.value === ('SW28' || 'threep')) {
+    $('input[type=radio]').each(function() {
+      if (this.value === 'SW28' || this.value === 'threep') {
         this.checked = true;
       } else {
         this.checked = false;
