@@ -19,7 +19,7 @@ var paP2EB = {
 };
 var movieMenu = [starW28, eFaYMF, paP2EB];
 
-function Ticket(nMovie,mTime) {
+function Ticket(nMovie,mTime,age) {
   console.log(nMovie, mTime, starW28.showTimes[1]);
   this.time = movieMenu[nMovie].showTimes[mTime];
   var name = movieMenu[nMovie].name;
@@ -86,7 +86,8 @@ $(document).ready(function() {
 
     var nMovie = $("input:radio[name=movie]:checked").val();
     var mTime = $("input:radio[name=time]:checked").val();
-    var newTicket = new Ticket(nMovie,mTime);
+    var inAge = $("input#age").val();
+    var newTicket = new Ticket(nMovie,mTime,inAge);
     totalCost += newTicket.price;
     $(".movieList").show();
     $("ul#movies").append("<li><span class='movieL'>" + "$" + newTicket.price + ": " + newTicket.time + " " + newTicket.name + "</span></li>");
