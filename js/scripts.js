@@ -20,7 +20,6 @@ var paP2EB = {
 var movieMenu = [starW28, eFaYMF, paP2EB];
 
 function Ticket(nMovie,mTime,age) {
-  console.log(nMovie, mTime, starW28.showTimes[1]);
   this.time = movieMenu[nMovie].showTimes[mTime];
   var name = movieMenu[nMovie].name;
   var price = 12;
@@ -72,13 +71,10 @@ $(document).ready(function() {
     $("div#movieMenu").append('              </label>');
     $("div#movieMenu").append('            </div>');
   };
-
   newShowTimes (0);
 
   $("#movieMenu").click(function(event) {
-    // event.preventDefault();
-    var whatChecked = $("input:radio[name=movie]:checked").val()
-    newShowTimes (whatChecked);
+    newShowTimes ($("input:radio[name=movie]:checked").val());
   });
 
   $("form#new-movie").submit(function(event) {
